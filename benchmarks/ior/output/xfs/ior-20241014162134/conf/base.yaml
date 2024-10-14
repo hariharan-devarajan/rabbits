@@ -1,12 +1,12 @@
 job:
   name: ${RABBITS_NAME}-${RABBITS_JOB_FOLDER_NAME}
 rabbit:
-  capacity: RABBITS_SUBS_RABBIT_CAPACITY
+  capacity: 64
 ior:
   file_sharing_cmd: ""
-  block_size: RABBITS_SUBS_BLOCK_SIZE
+  block_size: 33554432
   block_size_cmd: "-b=${RABBITS_IOR_BLOCK_SIZE}"
-  transfer_size: RABBITS_SUBS_TRANSFER_SIZE
+  transfer_size: 4k
   transfer_size_cmd: "-t=${RABBITS_IOR_TRANSFER_SIZE}"
   sync_options_cmd: "-Y -e"
   output_format: "csv"
