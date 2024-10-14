@@ -1,0 +1,3 @@
+ior:
+  file_sharing_cmd: "-F"
+  operation_cmd: "-w"
