@@ -1,0 +1,31 @@
+name: ior
+env:
+  venvs: ${RABBITS_PROJECT_HOME}/env
+  spack_root: /usr/WS2/haridev/spack-09-26-24
+flux:
+  id: FLUX_JOB_ID
+rabbit:
+  enable: 1
+  type: xfs
+  profile: default
+  capacity: 
+  name: ${RABBITS_NAME}
+  dir_var: DW_JOB_${RABBITS_NAME}
+  mount: ${!RABBITS_RABBIT_DIR_VAR}
+job:
+  folder_name: ${RABBITS_ENV_FOLDER_NAME}
+  run_id: 2  
+  pfs: /p/lustre3/${USER}
+  nodes: ${RABBITS_ENV_NODES}
+  ppn: ${RABBITS_ENV_PPN}
+  cores: 64
+  gpus: 8
+  clean: 1
+  time: 60
+  queue: pdebug
+  name: ${RABBITS_NAME}-${RABBITS_JOB_FOLDER_NAME}
+  output_folder: ${RABBITS_PROJECT_HOME}/benchmarks/ior/output/${RABBITS_RABBIT_TYPE}
+  run_dir: ${RABBITS_JOB_OUTPUT_FOLDER}/${RABBITS_JOB_NAME}
+  conf: ${RABBITS_JOB_RUN_DIR}/conf
+  result: ${RABBITS_JOB_RUN_DIR}/result
+  log: ${RABBITS_JOB_RUN_DIR}/log

@@ -1,0 +1,2 @@
+access,bw(MiB/s),IOPS,Latency,block(KiB),xfer(KiB),open(s),wr/rd(s),close(s),total(s),numTasks,iter
+write,12705.7070,12705.8417,0.0201,4194304.0000,1024.0000,0.0062,82.5271,3.1034,82.5280,256,0

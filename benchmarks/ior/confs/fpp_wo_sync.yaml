@@ -1,4 +1,4 @@
 ior:
   file_sharing_cmd: "-F"
   operation_cmd: "-w"
-  sync_options_cmd: ""
+  sync_options_cmd: "-Y -e"

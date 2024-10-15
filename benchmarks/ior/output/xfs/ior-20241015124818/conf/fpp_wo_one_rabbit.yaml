@@ -1,0 +1,6 @@
+ior:
+  file_sharing_cmd: "-F"
+  operation_cmd: "-w"
+job:
+  hosts: "--requires=hosts:tuolumne[1017-1032]"
+  multi: 0

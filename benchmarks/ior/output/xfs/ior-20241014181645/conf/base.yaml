@@ -1,18 +1,18 @@
 job:
   name: ${RABBITS_NAME}-${RABBITS_JOB_FOLDER_NAME}
 rabbit:
-  capacity: RABBITS_SUBS_RABBIT_CAPACITY
+  capacity: 512
 ior:
   file_sharing_cmd: ""
-  block_size: RABBITS_SUBS_BLOCK_SIZE
+  block_size: 4294967296
   block_size_cmd: "-b=${RABBITS_IOR_BLOCK_SIZE}"
-  transfer_size: RABBITS_SUBS_TRANSFER_SIZE
+  transfer_size: 1m
   transfer_size_cmd: "-t=${RABBITS_IOR_TRANSFER_SIZE}"
-  sync_options_cmd: ""
+  sync_options_cmd: "-Y -e"
   output_format: "csv"
   output_file_prefix: ${RABBITS_JOB_RESULT}/${RABBITS_JOB_NAME}_${RABBITS_JOB_NODES}_${RABBITS_JOB_PPN}_${RABBITS_IOR_BLOCK_SIZE}_${RABBITS_IOR_TRANSFER_SIZE}_write.${RABBITS_IOR_OUTPUT_FORMAT}
   output_format_cmd: -O summaryFormat=${RABBITS_IOR_OUTPUT_FORMAT^^} -O summaryFile=${RABBITS_IOR_OUTPUT_FILE_PREFIX}
-  iteration_cmd: "-i 10"
+  iteration_cmd: "-i 5"
   reorder_task_cmd: "-C"
   interface_cmd: POSIX
   operation_cmd: ""
