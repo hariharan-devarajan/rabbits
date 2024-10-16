@@ -1,0 +1,19 @@
+job:
+  name: ${RABBITS_NAME}-${RABBITS_JOB_FOLDER_NAME}
+rabbit:
+  capacity: 128
+ior:
+  file_sharing_cmd: ""
+  block_size: 4294967296
+  block_size_cmd: "-b=${RABBITS_IOR_BLOCK_SIZE}"
+  transfer_size: 1m
+  transfer_size_cmd: "-t=${RABBITS_IOR_TRANSFER_SIZE}"
+  sync_options_cmd: ""
+  output_format: "csv"
+  output_file_prefix: ${RABBITS_JOB_RESULT}/${RABBITS_JOB_NAME}_${RABBITS_JOB_NODES}_${RABBITS_JOB_PPN}_${RABBITS_IOR_BLOCK_SIZE}_${RABBITS_IOR_TRANSFER_SIZE}_write.${RABBITS_IOR_OUTPUT_FORMAT}
+  output_format_cmd: -O summaryFormat=${RABBITS_IOR_OUTPUT_FORMAT^^} -O summaryFile=${RABBITS_IOR_OUTPUT_FILE_PREFIX}
+  iteration_cmd: "-i 10"
+  reorder_task_cmd: "-C"
+  interface_cmd: POSIX
+  operation_cmd: ""
+  interface_cmd: "-a ${RABBITS_IOR_INTERFACE}"

@@ -1,6 +1,7 @@
 ior:
   file_sharing_cmd: "-F"
   operation_cmd: "-w"
+  sync_options_cmd: "-Y -e"
 job:
   hosts: "--requires=hosts:tuolumne[1017-1032]"
   multi_node_start: 4

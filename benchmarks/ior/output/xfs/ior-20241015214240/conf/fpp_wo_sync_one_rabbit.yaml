@@ -4,7 +4,7 @@ ior:
   sync_options_cmd: "-Y -e"
 job:
   hosts: "--requires=hosts:tuolumne[1033-1048]"
-  multi_node_start: 3
-  multi_node_end: 3
-  multi_ppn_start: 3
+  multi_node_start: 1
+  multi_node_end: 1
+  multi_ppn_start: 5
   multi_ppn_end: 5
